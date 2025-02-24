@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Webpage</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      padding: 0;
+      transition: background-color 0.3s ease;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+    }
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+    .error {
+      color: red;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <h1>Interactive Webpage</h1>
+
+  <!-- Interactive Button -->
+  <button id="toggle-bg-btn">Toggle Background Color</button>
+
+  <!-- Slider with Real-Time Feedback -->
+  <h2>Adjust Text Size</h2>
+  <input type="range" id="text-size-slider" min="10" max="50" value="20">
+  <p id="dynamic-text">This text size will change dynamically.</p>
+
+  <!-- Modal -->
+  <h2>Modal Example</h2>
+  <button id="open-modal-btn">Open Modal</button>
+  <div class="modal-overlay" id="modal-overlay"></div>
+  <div class="modal" id="modal">
+    <h3>Modal Title</h3>
+    <p>This is a modal dialog box.</p>
+    <button id="close-modal-btn">Close</button>
+  </div>
+
+  <!-- Form with Validation -->
+  <h2>Form Validation</h2>
+  <form id="user-form">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name">
+    <span class="error" id="name-error"></span><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email">
+    <span class="error" id="email-error"></span><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password">
+    <span class="error" id="password-error"></span><br>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <!-- Bonus Dropdown -->
+  <h2>Bonus Dropdown</h2>
+  <select id="custom-dropdown">
+    <option value="">Select an option</option>
+    <option value="Hello!">Option 1</option>
+    <option value="Goodbye!">Option 2</option>
+  </select>
+  <p id="dropdown-message"></p>
+
+  <script src="script.js"></script>
+</body>
+</html>
